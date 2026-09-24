@@ -88,7 +88,9 @@ def book_car(car_id):
                   days = 1
         except (ValueError, TypeError):
              days = 1 # Fallback if left blank
-            
+        # Capture the new payment method
+        payment_method = request.form.get('payment')
+           
         # Force the database price into an integer (and strip any accidental commas)
         clean_price = int(str(selected_car['price']).replace(',', ''))
         total_price = days * clean_price
