@@ -29,6 +29,12 @@
             <strong>{{ payment }}</strong>
         </div>
 
+        <div class="spec-row" style="margin-top: 1rem; border-bottom: none;">
+            <span class="spec-label" style="font-size: 1rem; color: var(--text-main);">Payment Method:</span>
+            <!-- Ensure 'payment_method' matches the exact variable name passed from your backend -->
+            <span style="font-size: 1rem; font-weight: 600; color: #fff;">{{ payment_method }}</span>
+        </div>
+
         <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #1f2937; color: #fff; font-size: 1.2rem;">
             <span>Total Estimated Cost:</span>
             <!-- Jinja formatting added here for commas -->
