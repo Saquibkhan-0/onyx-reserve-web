@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEXDRIVE | Experience the Extraordinary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>APEX<span>DRIVE</span></h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/services">Services</a>
+            <a href="/cars">The Fleet</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 3rem;">
+        <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 APEXDRIVE Automotive Services. Tumakuru, Karnataka.</p>
+    </footer>
+</body>
+</html>

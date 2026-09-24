@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 4rem;">Comprehensive Services</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+            <!-- Service 1 -->
+            <div class="card" style="display: flex; flex-direction: row; flex-wrap: wrap; padding: 0; background: var(--panel-bg);">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Self Drive" style="width: 100%; height: 100%; object-fit: cover; border-right: 1px solid var(--border);">
+                </div>
+                <div style="flex: 2; padding: 3rem;">
+                    <h3 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">Self-Drive Performance Rentals</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">Take control of the wheel. Whether you are navigating coastal highways or carving through the ghats, our self-drive fleet gives you unfettered access to world-class engineering. Available for 24-hour, weekend, and weekly engagements with unlimited kilometer packages available upon request.</p>
+                    <a href="/cars" class="btn" style="width: auto; padding: 0.8rem 2rem;">Browse Fleet</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="card" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; padding: 0; background: var(--panel-bg);">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.ctfassets.net/gyb9rohhih9s/5bDZCf2mzfIoGOugAJPJ5s/be21226d032b4f0a1889652906311c95/02_TrackIcons_Spa_07_09_2025_1639.jpg?q=70&w=800" alt="Track Prep" style="width: 100%; height: 100%; object-fit: cover; border-left: 1px solid var(--border);">
+                </div>
+                <div style="flex: 2; padding: 3rem;">
+                    <h3 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">Track Day Preparation & Setup</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">Leveraging our background in precision servicing, we offer specialized track configurations for select vehicles. This includes aggressive laser-aligned camber setups, high-temperature brake fluid flushes, and telemetry activation. Drive the machine at its absolute limit with confidence.</p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="card" style="display: flex; flex-direction: row; flex-wrap: wrap; padding: 0; background: var(--panel-bg);">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDLncG6dzHKtFtdqbdlYWw6VcfXoCnGGSjOPjxzfmfaA&s=10" alt="Chauffeur" style="width: 100%; height: 100%; object-fit: cover; border-right: 1px solid var(--border);">
+                </div>
+                <div style="flex: 2; padding: 3rem;">
+                    <h3 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">Executive Chauffeur Protocol</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8;">For clients who prefer to conduct business or relax in transit. Our chauffeur service pairs our flagship Mercedes and Audi vehicles with highly trained, discreet professional drivers. Ideal for corporate delegates, airport transfers, and VIP logistics across Karnataka.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,357 @@
+/* =========================================
+   AERO Dynamics | Core Variables
+   ========================================= */
+:root {
+    --bg-dark: #0a0a0c;
+    --panel-bg: #13151a;
+    --accent: #e63946;
+    --accent-glow: rgba(230, 57, 70, 0.4);
+    --text-main: #f1faee;
+    --text-muted: #a8dadc;
+    --border: #2b2d42;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --font-stack: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =========================================
+   Global Reset & Typography
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   Navigation & Header
+   ========================================= */
+header {
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+header h1 span {
+    color: var(--accent);
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* =========================================
+   Layout Sections
+   ========================================= */
+.section {
+    padding: 5rem 5%;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* =========================================
+   Grid System & Fleet Cards
+   ========================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--accent-glow);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+    background: #1a1a2e; /* Fallback rendering color */
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.02);
+}
+
+/* Telemetry Animation */
+.telemetry-line {
+    height: 3px;
+    background: var(--accent);
+    width: 0;
+    transition: width 0.6s ease-out;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.card:hover .telemetry-line {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    background: var(--panel-bg);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Technical Specification Rows */
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.spec-row:last-of-type {
+    margin-top: auto;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+/* =========================================
+   Buttons & Forms
+   ========================================= */
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+input {
+    font-family: var(--font-stack);
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* =========================================
+   Interactive Modals
+   ========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--panel-bg);
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--accent);
+}
+
+/* =========================================
+   Responsive Media Queries
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    .section {
+        padding: 3rem 5%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card img {
+        height: 200px;
+    }
+}
+/* --- OVERLAPPING FEATURE CARDS --- */
+.features-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: -4rem auto 4rem auto; /* The -4rem pulls the cards UP to overlap the hero */
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap; /* Ensures they stack neatly on mobile screens */
+}
+
+.feature-card {
+    background: #27272a; /* Titanium Grey */
+    border: 1px solid #3f3f46; /* Subtle metallic edge */
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Deep shadow for the dark theme */
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Slight hover lift */
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+.feature-text h4 {
+    margin: 0 0 0.3rem 0;
+    color: #ffffff; /* Dark text for readability on white */
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.feature-text p {
+    margin: 0;
+    color: #a1a1aa; /* Muted gray subtitle */
+    font-size: 0.85rem;
+}

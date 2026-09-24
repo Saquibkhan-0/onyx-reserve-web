@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Fleet Header Section -->
+<section class="section" style="background: linear-gradient(rgba(10,10,12,0.9), rgba(10,10,12,0.9)), url('https://i.pinimg.com/1200x/bd/6b/91/bd6b914613b6000c2df8b074b65cb9f9.jpg') center/cover; padding: 6rem 5% 4rem; text-align: center; border-bottom: 1px solid var(--border);">
+    <h2 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">The <span style="color: var(--accent);">Active Fleet</span></h2>
+    <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Our complete collection of geometrically calibrated, high-performance, and luxury vehicles available for deployment.</p>
+</section>
+
+<!-- Full Fleet Grid -->
+<section class="section">
+    <div class="grid">
+        <!-- Loops through every vehicle in the database -->
+        {% for car in cars %}
+        <div class="card">
+            <img src="{{ car.img }}" alt="{{ car.brand }} {{ car.model }}" onerror="this.src='https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80'">
+            <div class="telemetry-line"></div>
+            
+            <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div class="card-title" style="font-size: 1.4rem;">{{ car.brand }} {{ car.model }}</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold;">
+                        ★ {{ car.rating }}
+                    </div>
+                </div>
+                
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                    {{ car.transmission }} &bull; {{ car.fuel }} &bull; {{ car.seats }} Seats
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">Engine Specification</span>
+                    <span>{{ car.engine }}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Peak Output</span>
+                    <span>{{ car.hp }}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Color Profile</span>
+                    <span>{{ car.color }}</span>
+                </div>
+                <div class="spec-row" style="margin-top: 1rem; border-bottom: none;">
+                    <span class="spec-label" style="font-size: 1rem; color: var(--text-main);">Daily Rate</span>
+                    <span style="font-size: 1.3rem; font-weight: 800; color: var(--accent);">₹{{ car.price }}</span>
+                </div>
+
+                <a href="/book/{{ car.id }}" class="btn">Initialize Booking</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
