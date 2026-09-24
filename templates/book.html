@@ -38,20 +38,15 @@
                 <input type="date" id="end_date" name="end_date" required>
             </div>
             
-            <!-- NEW PAYMENT DROPDOWN -->
-            <div class="form-group" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <!-- NEW PAYMENT DROPDOWN (BUG FIX) -->
+            <div class="form-group" style="margin-top: 1rem; margin-bottom: 2rem; position: relative; z-index: 999;">
                 <label for="payment" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Payment Method</label>
-                <select id="payment" name="payment" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem;">
+                <select id="payment" name="payment" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; background-color: #fff; color: #333; cursor: pointer;">
+                    <option value="" disabled selected>Select a payment method...</option>
                     <option value="Pay at Showroom">Pay at Showroom</option>
                     <option value="Online Payment">Online Payment (Card/UPI)</option>
                 </select>
             </div>
-
-            <button type="submit" class="btn" style="width: 100%;">Submit Rental Request</button>
-        </form>
-    </div>
-</div>
-{% endblock %}
 
             <button type="submit" class="btn" style="background: var(--accent); color: #fff;">Confirm Telemetry & Book</button>
         </form>
